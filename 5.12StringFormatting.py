@@ -3,7 +3,8 @@ age = 23
 
 print("My age is " + str(age) + " years.")
 print("My age is {} years.".format(age))
-print("There are {0} days in {1}, {2}, {3}, {4}, {5}, {6} and {7}".format(31,"January", "March", "May", "July", "August", "October", "Deceber"))
+print("There are {0} days in {1}, {2}, {3}, {4}, {5}, {6} and {7}".format(31, "January", "March", "May", "July",
+                                                                          "August", "October", "Deceber"))
 print()
 
 print("""Jan : {2}
@@ -26,20 +27,22 @@ print("My age is %d %s, %d %s." % (age, "years", 8, "months"))
 for i in range(1, 11):
     print("Square of %2d : %4d and cube of %2d : %4d" % (i, i**2, i, i**3))
 
-for i in range 1, 11):
-    print("Square of %2d : %3d %6s cube of %2d : %4d" % (i, i**2, " ", i, i**3))
+for i in range(1, 11):
+    print("Square of %2d : %3d %6s cub1e of %2d : %4d" % (i, i**2, " ", i, i**3))
 
-#   %2d %3d %6s %2d %4d -  used for alligning the numbers"
+#   %2d %3d %6s %2d %4d -  used for alligning be of %2d : %4d" % (i, i**2, " ", i, i**3))
+#
+# #   %2d %3d %6s %2d %4d -  used the numbers"
 
 print("Pi is approximately %12f" % (22 / 7))
 
 for i in range(1, 12):
     print("No. {0:2} squared is {1:4} and cubed is {2:4}".format(i, i ** 2, i ** 3))
 
-for i in range(1,11):
-    print("Square of {0:2} : {1:4} {3:10} cube of {0:2} : {2:4}".format(i,i**2,i**3,' '))
-#same allignment purpose. 0th string will get 2. 3rd sting will get 10
+for i in range(1, 11):
+    print("Square of {0:2} : {1:4} {3:10} cube of {0:2} : {2:4}".format(i, i**2, i**3, ' '))
 
+# same allignment purpose. 0th string will get 2. 3rd sting will get 10
 
 for i in range(1, 11):
     print("Squared of {0:2} : {1:<4} and cubed of {0:2} : {2:<4}".format(i, i ** 2, i ** 3))
@@ -74,4 +77,4 @@ print("Pi is approximately {0:62.50f}".format(22 / 7))
 print("Pi is approximately {0:72.50f}".format(22 / 7))
 
 for i in range(1, 12):
-    print("Square of {:2} : {:4} and cube of {} {:4}".format(i, i ** 2,i, i ** 3))
+    print("Square of {:2} : {:4} and cube of {} {:4}".format(i, i ** 2, i, i ** 3))
