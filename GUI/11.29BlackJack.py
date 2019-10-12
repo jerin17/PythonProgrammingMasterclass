@@ -117,69 +117,70 @@ def newGame():
     # if playerScore > 21:
     #     resultText.set("Dealer Wins!")
 
-mainwindow = tkinter.Tk()
-# Set up screen and frames for the dealer and player
-mainwindow.title("Black Jack")
-mainwindow.geometry("640x480")
-mainwindow.configure(background='green')
+if __name__ == '__main__':
+    mainwindow = tkinter.Tk()
+    # Set up screen and frames for the dealer and player
+    mainwindow.title("Black Jack")
+    mainwindow.geometry("640x480")
+    mainwindow.configure(background='green')
 
 
-resultText = tkinter.StringVar()
-result = tkinter.Label(mainwindow, textvariable=resultText)
-result.grid(row=0, column=0, columnspan=3)
+    resultText = tkinter.StringVar()
+    result = tkinter.Label(mainwindow, textvariable=resultText)
+    result.grid(row=0, column=0, columnspan=3)
 
-cardFrame = tkinter.Frame(mainwindow, relief="sunken", borderwidth=1, background="green")
-cardFrame.grid(row=1, column=0, sticky='ew', columnspan=3, rowspan=2)
+    cardFrame = tkinter.Frame(mainwindow, relief="sunken", borderwidth=1, background="green")
+    cardFrame.grid(row=1, column=0, sticky='ew', columnspan=3, rowspan=2)
 
-dealerScoreLabel = tkinter.IntVar()
-tkinter.Label(cardFrame, text='Dealer', background='green', fg='white').grid(row=0, column=0)
-tkinter.Label(cardFrame, textvariable=dealerScoreLabel, background='green', fg='white').grid(row=1, column=0)
+    dealerScoreLabel = tkinter.IntVar()
+    tkinter.Label(cardFrame, text='Dealer', background='green', fg='white').grid(row=0, column=0)
+    tkinter.Label(cardFrame, textvariable=dealerScoreLabel, background='green', fg='white').grid(row=1, column=0)
 
-# embedded frame to hold the card
-dealerCardFrame = tkinter.Frame(cardFrame, background='green')
-dealerCardFrame.grid(row=0, column=1, sticky='ew', rowspan=2)
+    # embedded frame to hold the card
+    dealerCardFrame = tkinter.Frame(cardFrame, background='green')
+    dealerCardFrame.grid(row=0, column=1, sticky='ew', rowspan=2)
 
-playerScoreLabel = tkinter.IntVar()
-playerScore = 0
-playerAce = False
+    playerScoreLabel = tkinter.IntVar()
+    playerScore = 0
+    playerAce = False
 
 
-tkinter.Label(cardFrame, text='Player', background='green', fg='white').grid(row=2, column=0)
-tkinter.Label(cardFrame, textvariable=playerScoreLabel, background='green', fg='white').grid(row=3, column=0)
+    tkinter.Label(cardFrame, text='Player', background='green', fg='white').grid(row=2, column=0)
+    tkinter.Label(cardFrame, textvariable=playerScoreLabel, background='green', fg='white').grid(row=3, column=0)
 
-# embedded frame to hold the player's card
-playerCardFrame = tkinter.Frame(cardFrame, background='green')
-playerCardFrame.grid(row=2, column=1, sticky='ew', rowspan=2)
+    # embedded frame to hold the player's card
+    playerCardFrame = tkinter.Frame(cardFrame, background='green')
+    playerCardFrame.grid(row=2, column=1, sticky='ew', rowspan=2)
 
-buttonFrame = tkinter.Frame(mainwindow)
-buttonFrame.grid(row=3, column=0, columnspan=3, sticky='w')
+    buttonFrame = tkinter.Frame(mainwindow)
+    buttonFrame.grid(row=3, column=0, columnspan=3, sticky='w')
 
-dealerButton = tkinter.Button(buttonFrame, text='Dealer', command=dealDealer)
-dealerButton.grid(row=0, column=0)
+    dealerButton = tkinter.Button(buttonFrame, text='Dealer', command=dealDealer)
+    dealerButton.grid(row=0, column=0)
 
-playerButton = tkinter.Button(buttonFrame, text="Player", command=dealPlayer)
-playerButton.grid(row=0, column=1)
+    playerButton = tkinter.Button(buttonFrame, text="Player", command=dealPlayer)
+    playerButton.grid(row=0, column=1)
 
-newGameButton = tkinter.Button(buttonFrame, text='New Game', command=newGame)
-newGameButton.grid(row=0, column=2)
+    newGameButton = tkinter.Button(buttonFrame, text='New Game', command=newGame)
+    newGameButton.grid(row=0, column=2)
 
-# load cards
-cards = []
-loadImages(cards)
-# print(cards)
+    # load cards
+    cards = []
+    loadImages(cards)
+    # print(cards)
 
-# create a new dec of cards and shuffle them
-deck = list(cards)
-random.shuffle(deck)
+    # create a new dec of cards and shuffle them
+    deck = list(cards)
+    random.shuffle(deck)
 
-# create list to store dealer's and player's hand
+    # create list to store dealer's and player's hand
 
-dealerHand = []
-playerHand = []
+    dealerHand = []
+    playerHand = []
 
-dealPlayer()
-dealerHand.append((dealCard(dealerCardFrame)))
-dealerScoreLabel.set(scoreHand(dealerHand))
-dealPlayer()
+    dealPlayer()
+    dealerHand.append((dealCard(dealerCardFrame)))
+    dealerScoreLabel.set(scoreHand(dealerHand))
+    dealPlayer()
 
-mainwindow.mainloop()
+    mainwindow.mainloop()
